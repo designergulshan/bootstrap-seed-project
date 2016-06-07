@@ -1,10 +1,11 @@
 var gulp = require('gulp'),
     less = require('gulp-less'),
     gutil = require('gulp-util'),
+    clean = require('gulp-clean'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
-    clean = require('gulp-clean'),
+    imagemin = require('gulp-imagemin'),
     cleanCss = require('gulp-clean-css'),
     browserSync = require('browser-sync').create();
 
@@ -62,6 +63,7 @@ gulp.task('fonts', function() {
 // IMAGES TASK
 gulp.task('images', function() {
   return gulp.src(paths.images)
+    .pipe(imagemin())
     .pipe(gulp.dest('dist/images'))
     .pipe(browserSync.stream());
 });
@@ -72,7 +74,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.html, ['html']);
   gulp.watch('src/js/*.js', ['js']);
   gulp.watch(paths.fonts, ['fonts']);
-  gulp.watch(paths.images, ['images']);
+  gulp.watch(paths.images, ['images', 'clean']);
 });
 
 // BROWSER SYNC TASK

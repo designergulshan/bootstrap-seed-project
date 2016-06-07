@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-seed-project",
   "version": "1.0.0",
-  "description": "A simple ready to use project directory with the help of gulp, less, browser-sync and some other plugins.",
+  "description": "A simple ready to use project directory with the help of gulp, less, browser-sync and some other interesting node modules.",
   "main": "app.js",
   "scripts": {
     "test": "gulp"
