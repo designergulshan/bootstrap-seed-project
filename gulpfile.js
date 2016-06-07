@@ -88,8 +88,8 @@ gulp.task('browser-sync', function() {
 
 // clean task
 gulp.task('clean', function () {
-	return gulp.src('dist', {read: false})
-		.pipe(clean());
+  return gulp.src('dist', {read: false})
+    .pipe(clean());
 });
 
 // DEFAULT TASK
